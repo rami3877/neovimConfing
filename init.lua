@@ -1,0 +1,8 @@
+require("plugs")
+require("options")
+require("mapping")
+require("plugs.lsp")
+require("plugs.treesitter")
+require("plugs.cmp")
+-- require("plugs.comp")
+require("plugs.others")
