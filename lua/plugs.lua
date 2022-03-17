@@ -56,5 +56,7 @@ require("paq")({
 
 	"folke/trouble.nvim",
 
+	"ray-x/lsp_signature.nvim",
+
 	{ "lervag/vimtex", opt = true }, -- Use braces when passing options
 })
