@@ -37,17 +37,24 @@ require("paq")({
 
     "phaazon/hop.nvim",
 
-	"nvim-telescope/telescope.nvim",
+	"nvim-telescope/telescope.nvim", -- +
+
+	"nvim-lua/plenary.nvim",
 
 	-- Select text object
 
 	"gcmt/wildfire.vim",
 
 	-- surrounding select text with given text
-
 	"tpope/vim-surround",
 
+	"simrat39/symbols-outline.nvim",
+
 	"kyazdani42/nvim-web-devicons",
+
+	"Pocco81/TrueZen.nvim",
+
+	"folke/trouble.nvim",
 
 	{ "lervag/vimtex", opt = true }, -- Use braces when passing options
 })
