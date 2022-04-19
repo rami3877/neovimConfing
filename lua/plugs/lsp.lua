@@ -62,4 +62,12 @@ require'lspconfig'.clangd.setup {
     -- root_pattern = require 'lspconfig.util'.root_pattern('compile_commands.json', 'compile_flags.txt', '.git')
 }
 require'lspconfig'.cmake.setup {}
+require'lspconfig'.jedi_language_server.setup{
+  cmd = {
+	"jedi-language-server"
+  },
+  filetypes={
+	"python"
+  }
+}
 require'lspconfig'.sumneko_lua.setup{}
