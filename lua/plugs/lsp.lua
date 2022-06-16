@@ -71,3 +71,6 @@ require'lspconfig'.jedi_language_server.setup{
   }
 }
 require'lspconfig'.sumneko_lua.setup{}
+
+
+require("nvim-lsp-installer").setup {}

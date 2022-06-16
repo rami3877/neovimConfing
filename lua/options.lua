@@ -33,7 +33,7 @@ opt.scrolloff=5
 -- Time in milliseconds to wait for a key code sequence to complete
 opt.ttimeoutlen=0
 -- no waiting for key combination
-opt.timeout=true
+opt.timeout=false
 
 -- remember where to recover cursor
 opt.viewoptions='cursor,folds,slash,unix'
@@ -56,7 +56,7 @@ opt.wildmenu=true
 -- ignore case when searching and only on searching
 opt.ignorecase=true
 opt.smartcase=true
-
+opt.swapfile=false
 vim.cmd("set shortmess+=c")
 opt.inccommand='split'
 opt.completeopt="longest,noinsert,menuone,noselect,preview"
@@ -67,8 +67,8 @@ opt.updatetime=100
 opt.virtualedit='block'
 opt.lazyredraw=true
 opt.signcolumn="yes:1"
--- opt.mouse='a'
--- opt.clipboard =''
+opt.mouse='a'
+opt.clipboard="unnamedplus"
 -- opt.foldmethod='expr'
 opt.foldlevel=99
 opt.foldenable=true
