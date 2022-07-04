@@ -55,8 +55,12 @@ require("paq")({
 	"Pocco81/TrueZen.nvim",
 
 	"folke/trouble.nvim",
+	-- flutter
+
+    -- 'akinsho/flutter-tools.nvim',
 
 	"ray-x/lsp_signature.nvim",
+
 	"williamboman/nvim-lsp-installer",
 	{ "lervag/vimtex", opt = true }, -- Use braces when passing options
 })

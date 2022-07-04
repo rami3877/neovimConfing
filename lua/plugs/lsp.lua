@@ -17,8 +17,8 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 
-local servers = {"bashls","sumneko_lua", "clangd", "arduino_language_server", "cmake" , "jdtls"}
-
+local servers = {"dartls" ,"bashls","sumneko_lua", "clangd", "arduino_language_server", "cmake" }
+-- 
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
@@ -84,5 +84,9 @@ require("nvim-lsp-installer").setup({
     }
 })
 
-  require'lspconfig'.jdtls.setup{ cmd = { 'jdtls' } }
+-- require'lspconfig'.jdtls.setup{ cmd = { 'jdtls' } }
 require'lspconfig'.bashls.setup{}
+-- require'lspconfig'.dartls.setup{}
+
+-- alternatively you can override the default configs
+-- require("flutter-tools").setup {}
