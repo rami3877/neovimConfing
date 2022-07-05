@@ -61,6 +61,8 @@ require("paq")({
 
 	"ray-x/lsp_signature.nvim",
 
-	"williamboman/nvim-lsp-installer",
-	{ "lervag/vimtex", opt = true }, -- Use braces when passing options
+    's1n7ax/nvim-terminal',
+
+	-- "williamboman/nvim-lsp-installer",
+	-- { "lervag/vimtex", opt = true }, -- Use braces when passing options
 })

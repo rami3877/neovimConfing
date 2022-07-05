@@ -17,8 +17,7 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 
-local servers = {"dartls" ,"bashls","sumneko_lua", "clangd", "arduino_language_server", "cmake" }
--- 
+local servers = {"bashls","sumneko_lua", "clangd", "cmake" , "dartls"  }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
@@ -38,29 +37,8 @@ for _, sign in ipairs(signs) do
 	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
--- vim.lsp.handlers["textDocument/publishDiagnostics"] =
---     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
---         virtual_text = {prefix = "", spacing = 2},
---         signs = true,
---         underline = true
---     })
---
-nvim_lsp.arduino_language_server.setup {
 
-    cmd = {
-        "arduino-language-server", "-cli-config",
-        "\"$HOME/.arduino15/arduino-cli.yaml\"", "-cli",
-        "\"/usr/sbin/arduino-cli\"", "-clangd", "\"/usr/sbin/clangd\"", "-fqbn",
-        "arduino:mbed:nanorp2040connect"
-
-    }
-
-}
-
-require'lspconfig'.clangd.setup {
-
-    -- root_pattern = require 'lspconfig.util'.root_pattern('compile_commands.json', 'compile_flags.txt', '.git')
-}
+require'lspconfig'.clangd.setup {}
 require'lspconfig'.cmake.setup {}
 require'lspconfig'.jedi_language_server.setup{
   cmd = {
@@ -71,22 +49,7 @@ require'lspconfig'.jedi_language_server.setup{
   }
 }
 require'lspconfig'.sumneko_lua.setup{}
-
-
-require("nvim-lsp-installer").setup({
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
-    ui = {
-        icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
-        }
-    }
-})
-
 -- require'lspconfig'.jdtls.setup{ cmd = { 'jdtls' } }
 require'lspconfig'.bashls.setup{}
--- require'lspconfig'.dartls.setup{}
+require'lspconfig'.dartls.setup{}
 
--- alternatively you can override the default configs
--- require("flutter-tools").setup {}

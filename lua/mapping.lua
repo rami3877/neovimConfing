@@ -30,7 +30,7 @@ Map('n', '<leader>wa','<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
 Map('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
 Map('n', '<leader>wl','<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
 Map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-Map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+-- Map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 Map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 Map('n', 'gd', '<cmd>lua vim.lsp.buf.references()<CR>')
 Map('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
@@ -38,7 +38,7 @@ Map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>' )
 Map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 Map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
 -- Map('n', '<leader>fm', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-
+Map('t','<Esc>',' <C-\\><C-n>')
 
 
 Map("n", "<leader>tc", "<cmd>TroubleToggle<cr>")
@@ -47,16 +47,11 @@ Map("n", "<leader>tc", "<cmd>TroubleToggle<cr>")
 
 -- save
 Map('n', '<C-s>', ':bufdo w <CR>')
--- Map('i', '<C-z>', '')
--- Map('v', '<C-z>', '')
+Map('n', '<C-q>', ':bd % <CR>')
 
 Map("n", "tt", ":NvimTreeToggle<CR>")
 Map("n", "tr", ":NvimTreeRefresh<CR>")
 
--- Map("n", "<A-up>",      ":res +5<CR>")
--- Map("n", "<A-down>",    ":res -5<CR>")
--- Map("n", "<A-left>",    ":vertical resize-5<CR>")
--- Map("n", "<A-right>",   ":vertical resize+5<CR>")
 Map("n", "<A-k>", ":res +5<CR>")
 Map("n", "<A-j>", ":res -5<CR>")
 Map("n", "<A-l>", ":vertical resize-5<CR>")
