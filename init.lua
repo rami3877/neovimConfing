@@ -15,7 +15,6 @@ require("plugs.TrueZen")
 require("plugs.lspSignature")
 require("plugs.nvim-terminal")
 
-
 -- plugs has problem
--- require("plugs.galaxyline")
+require("plugs.galaxyline")
 -- require("plugs.comp")

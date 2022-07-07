@@ -33,7 +33,7 @@ require("paq")({
 
 	"rafamadriz/friendly-snippets",
 
-	 -- "glepnir/galaxyline.nvim", -- this pulgin has have problem "vim.lsp.disanostic.get_count is deprecated"
+	 "glepnir/galaxyline.nvim", -- this pulgin has have problem "vim.lsp.disanostic.get_count is deprecated"
 
     "phaazon/hop.nvim",
 
@@ -62,7 +62,9 @@ require("paq")({
 	"ray-x/lsp_signature.nvim",
 
     's1n7ax/nvim-terminal',
-
-	-- "williamboman/nvim-lsp-installer",
+	'dart-lang/dart-vim-plugin',
+	'natebosch/vim-lsc',
+	'natebosch/vim-lsc-dart',
+	"williamboman/nvim-lsp-installer",
 	-- { "lervag/vimtex", opt = true }, -- Use braces when passing options
 })

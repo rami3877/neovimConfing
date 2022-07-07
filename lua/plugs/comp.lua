@@ -1,5 +1,5 @@
 
-require'compe'.setup {
+require'cmp'.setup {
   enabled = true;
   autocomplete = true;
   debug = false;

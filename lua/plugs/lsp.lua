@@ -17,12 +17,12 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 
-local servers = {"bashls","sumneko_lua", "clangd", "cmake" , "dartls"  }
+local servers = {"bashls","sumneko_lua", "clangd", "cmake" , "rls"} -- , "dartls"
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
         flags = {debounce_text_changes = 150}
-    }
+     }
 end
 
 
@@ -51,5 +51,6 @@ require'lspconfig'.jedi_language_server.setup{
 require'lspconfig'.sumneko_lua.setup{}
 -- require'lspconfig'.jdtls.setup{ cmd = { 'jdtls' } }
 require'lspconfig'.bashls.setup{}
-require'lspconfig'.dartls.setup{}
+-- require'lspconfig'.dartls.setup{}
+-- require'lspconfig'.rls.setup{}
 
