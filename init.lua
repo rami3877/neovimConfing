@@ -17,4 +17,3 @@ require("plugs.nvim-terminal")
 
 -- plugs has problem
 require("plugs.galaxyline")
--- require("plugs.comp")
