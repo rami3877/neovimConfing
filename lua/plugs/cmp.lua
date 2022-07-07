@@ -62,11 +62,11 @@ local cmp = require'cmp'
     },
     formatting = {
       format = require("lspkind").cmp_format({with_text = true, menu = ({
-          buffer = "[Buffer]",
-          nvim_lsp = "[LSP]",
-          vsnip = "[Vsnip]",
           nvim_lua = "[Lua]",
+          nvim_lsp = "[LSP]",
           path = "[Path]",
+          vsnip = "[Vsnip]",
+          buffer = "[Buffer]",
         })}),
     },
   })

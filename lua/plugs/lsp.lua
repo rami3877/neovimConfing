@@ -1,18 +1,15 @@
 
-local lspconfig = require'lspconfig'
-local signature = require'lsp_signature'
-local cmp_nvim_lsp = require'cmp_nvim_lsp'
 
-lspconfig.util.default_config = vim.tbl_extend(
+require'lspconfig'.util.default_config = vim.tbl_extend(
   "force",
-  lspconfig.util.default_config,
+ require'lspconfig'.util.default_config,
   {
     -- Required by nvim-cmp
-    capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 
     -- Init signature plugin on_attach
     on_attach = function ()
-      signature.on_attach({
+      require'lsp_signature'.on_attach({
         bind = true,
         handler_opts = {
           border = "single"
@@ -21,5 +18,16 @@ lspconfig.util.default_config = vim.tbl_extend(
     end
   }
 )
-lspconfig.clangd.setup{}
-lspconfig.bashls.setup{}
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.bashls.setup{}
+
+local signs = {
+       { name = "DiagnosticSignError", text = "" },
+       { name = "DiagnosticSignWarn", text = "" },
+       { name = "DiagnosticSignHint", text = "" },
+       { name = "DiagnosticSignInfo", text = "" },
+}
+
+for _, sign in ipairs(signs) do
+       vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+end
