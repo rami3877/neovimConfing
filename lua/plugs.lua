@@ -6,7 +6,7 @@ require("paq")({
 	"nvim-treesitter/nvim-treesitter",
 
 	"Shatur/neovim-ayu",
-------------Completion------------
+	------------Completion------------
 	"hrsh7th/nvim-cmp",
 
 	"hrsh7th/cmp-buffer",
@@ -24,7 +24,7 @@ require("paq")({
 	"hrsh7th/vim-vsnip",
 	-- "saadparwaiz1/cmp_luasnip",
 	--     "L3MON4D3/LuaSnip",
------------------------------
+	-----------------------------
 
 	"onsails/lspkind-nvim",
 
@@ -38,9 +38,9 @@ require("paq")({
 
 	"rafamadriz/friendly-snippets",
 
-	 "glepnir/galaxyline.nvim", -- this pulgin has have problem "vim.lsp.disanostic.get_count is deprecated"
+	"glepnir/galaxyline.nvim", -- this pulgin has have problem "vim.lsp.disanostic.get_count is deprecated"
 
-    "phaazon/hop.nvim",
+	"phaazon/hop.nvim",
 
 	"nvim-telescope/telescope.nvim", -- +
 
@@ -62,14 +62,15 @@ require("paq")({
 	"folke/trouble.nvim",
 	-- flutter
 
-    -- 'akinsho/flutter-tools.nvim',
+	-- 'akinsho/flutter-tools.nvim',
 
 	"ray-x/lsp_signature.nvim",
 
-    's1n7ax/nvim-terminal',
-	'dart-lang/dart-vim-plugin',
-	'natebosch/vim-lsc',
-	'natebosch/vim-lsc-dart',
+	"s1n7ax/nvim-terminal",
+	"dart-lang/dart-vim-plugin",
+	"natebosch/vim-lsc",
+	"natebosch/vim-lsc-dart",
 	"williamboman/nvim-lsp-installer",
+	"simrat39/rust-tools.nvim",
 	-- { "lervag/vimtex", opt = true }, -- Use braces when passing options
 })

@@ -65,3 +65,9 @@ Map('n','<F7>',':!make clear<CR>')
 -- force map
 Map('n', '<leader>vf',':TZFocus<CR>')
 
+local function f()
+  if vim.bo.filetype == "rust" then
+  	vim.api.nvim_command("RustRun")
+  end
+end
+vim.keymap.set("n" , "<leader>r" , f)

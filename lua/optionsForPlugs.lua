@@ -5,7 +5,7 @@ optionsall = {
 			"sumneko_lua",
 			"clangd",
 			"cmake",
-			"rls",
+			-- "rls",
 		},
 		signs = {
 			{ name = "DiagnosticSignError", text = "" },
