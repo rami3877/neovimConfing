@@ -2,7 +2,7 @@
 require("nvim_comment").setup()
 
 require"hop".setup {keys = "etovxqpdygfblzhckisuran"}
--- init.lua
+
 vim.g.symbols_outline = {
     highlight_hovered_item = true,
     show_guides = true,
@@ -56,35 +56,9 @@ vim.g.symbols_outline = {
     }
 }
 
-local present, nvim_tree = pcall(require, "nvim-tree")
+local present = pcall(require)
 
-nvim_tree.setup({
-    disable_netrw = true,
-    hijack_netrw = true,
-    open_on_setup = false,
-    ignore_ft_on_setup = {},
-    open_on_tab = true,
-    hijack_cursor = false,
-    update_cwd = false,
-    diagnostics = {
-        enable = false,
-        icons = {hint = "", info = "", warning = "", error = ""}
-    },
-    update_focused_file = {enable = false, update_cwd = false, ignore_list = {}},
-    system_open = {cmd = nil, args = {}},
-    filters = {dotfiles = false, custom = {}},
-    git = {enable = true, ignore = true, timeout = 500},
-    view = {
-        width = 10,
-        hide_root_folder = false,
-        side = 'left',
-        mappings = {custom_only = false, list = {}},
-        number = false,
-        relativenumber = false,
-        signcolumn = "yes"
-    },
-    trash = {cmd = "trash", require_confirm = true}
-})
+require"nvim-tree".setup(optionsall.nvimTree)
 
 
 
