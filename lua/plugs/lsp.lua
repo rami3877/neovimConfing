@@ -23,10 +23,16 @@ require("lspconfig").util.default_config = vim.tbl_extend("force", require("lspc
 })
 
 for _, lsp in ipairs(lspOptions.servers) do
-	require("lspconfig")[lsp].setup({})
+	if type(lsp) == "table" and lsp.settings then
+		require("lspconfig")[lsp].setup({
+		  settings = lsp.settings
+		})
+	else
+		require("lspconfig")[lsp].setup({})
+	end
 end
 
 for _, sign in ipairs(lspOptions.signs) do
 	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
-require('rust-tools').setup({})
+require("rust-tools").setup({})

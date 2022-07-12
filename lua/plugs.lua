@@ -71,6 +71,5 @@ require("paq")({
 	"natebosch/vim-lsc",
 	"natebosch/vim-lsc-dart",
 	"williamboman/nvim-lsp-installer",
-	"simrat39/rust-tools.nvim",
 	-- { "lervag/vimtex", opt = true }, -- Use braces when passing options
 })
