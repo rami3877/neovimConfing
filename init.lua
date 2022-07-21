@@ -15,4 +15,4 @@ require("plugs.TrueZen")
 require("plugs.lspSignature")
 require("plugs.nvim-terminal")
 require("plugs.galaxyline")
--- dsads
+

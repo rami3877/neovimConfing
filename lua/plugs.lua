@@ -19,11 +19,10 @@ require("paq")({
 
 	"hrsh7th/cmp-cmdline",
 
-	-- "hrsh7th/cmp-vsnip",
-	-- "hrsh7th/vim-vsnip",
-	"L3MON4D3/LuaSnip",
-	"saadparwaiz1/cmp_luasnip",
-	"rafamadriz/friendly-snippets",
+	"hrsh7th/cmp-vsnip",
+	"hrsh7th/vim-vsnip",
+	-- "saadparwaiz1/cmp_luasnip",
+	--     "L3MON4D3/LuaSnip",
 	-----------------------------
 
 	"onsails/lspkind-nvim",
@@ -36,6 +35,7 @@ require("paq")({
 
 	"kyazdani42/nvim-tree.lua",
 
+	"rafamadriz/friendly-snippets",
 
 	"glepnir/galaxyline.nvim", -- this pulgin has have problem "vim.lsp.disanostic.get_count is deprecated"
 

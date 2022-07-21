@@ -72,7 +72,6 @@ opt.clipboard = "unnamedplus"
 -- opt.foldmethod='expr'
 opt.foldlevel = 99
 opt.foldenable = true
--- opt.formatoptions='qj'
 opt.hidden = true
 opt.backup = false
 local undo_dir = vim.fn.stdpath("cache") .. "/undo"
@@ -83,8 +82,11 @@ if undo_stat and has_persist == 1 then
 	opt.undodir = undo_dir
 end
 require("github-theme").setup({
-  theme_style = "dark_colorblind",
-  function_style = "italic",
-
+	theme_style = "dark_colorblind",
+	function_style = "italic",
 })
 vim.cmd([[colorscheme github_dark_default]])
+
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
