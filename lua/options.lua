@@ -1,7 +1,7 @@
 local opt = vim.opt
 opt.encoding = "utf-8"
 opt.termguicolors = true
-opt.background = "dark"
+-- opt.background = "dark"
 
 -- enable number and relative line number
 opt.number = true
@@ -73,7 +73,6 @@ opt.clipboard = "unnamedplus"
 opt.foldlevel = 99
 opt.foldenable = true
 -- opt.formatoptions='qj'
-vim.cmd([[colorscheme ayu ]])
 opt.hidden = true
 opt.backup = false
 local undo_dir = vim.fn.stdpath("cache") .. "/undo"
@@ -83,3 +82,9 @@ if undo_stat and has_persist == 1 then
 	opt.undofile = true
 	opt.undodir = undo_dir
 end
+require("github-theme").setup({
+  theme_style = "dark_colorblind",
+  function_style = "italic",
+
+})
+vim.cmd([[colorscheme github_dark_default]])
