@@ -2,10 +2,14 @@ optionsall = {
 	lsp = {
 		servers = {
 			"bashls",
-			"sumneko_lua",
+			"lua_ls",
 			"clangd",
 			"cmake",
 			"rust_analyzer",
+			"pyright",
+			"jdtls",
+			"eslint",
+			"openscad_lsp",
 		},
 		signs = {
 			{ name = "DiagnosticSignError", text = "" },
@@ -18,8 +22,7 @@ optionsall = {
 	nvimTree = {
 		disable_netrw = true,
 		hijack_netrw = true,
-		open_on_setup = false,
-		ignore_ft_on_setup = {},
+
 		open_on_tab = true,
 		hijack_cursor = false,
 		update_cwd = false,

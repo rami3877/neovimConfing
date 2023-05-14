@@ -71,5 +71,9 @@ require("paq")({
 	"natebosch/vim-lsc-dart",
 	"williamboman/nvim-lsp-installer",
 	"projekt0n/github-nvim-theme",
+	-- plantuml tools 
+	"aklt/plantuml-syntax",
+	"weirongxu/plantuml-previewer.vim",
+	"tyru/open-browser.vim",
 	-- { "lervag/vimtex", opt = true }, -- Use braces when passing options
 })

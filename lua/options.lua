@@ -17,12 +17,10 @@ opt.cursorline = true
 opt.expandtab = false
 -- Number of spaces that a <Tab> in the file counts for.
 opt.tabstop = 4
-opt.shiftwidth = 2
+opt.shiftwidth = 5
 opt.softtabstop = 2
-
 -- Copy indent from current line when starting a new line
 opt.autoindent = true
-
 -- A List is an ordered sequence of items.
 -- opt.list=true
 -- opt.listchars="tab:<->,trail:·"
@@ -81,12 +79,13 @@ if undo_stat and has_persist == 1 then
 	opt.undofile = true
 	opt.undodir = undo_dir
 end
-require("github-theme").setup({
-	theme_style = "dark_colorblind",
-	function_style = "italic",
-})
-vim.cmd([[colorscheme github_dark_default]])
+-- require("github-theme").setup({
+-- 	theme_style = "github_dark_high_contrast",
+-- 	function_style = "italic",
+-- })
+vim.cmd([[colorscheme  ayu-dark]])
 
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
+-- opt.foldcolumn="5"

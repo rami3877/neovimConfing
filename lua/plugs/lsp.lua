@@ -1,37 +1,51 @@
 local lspOptions
-
-if optionsall.lsp == nil then
-	print(" ERRO : cant optionsall.lsp")
-	return
-else
-	lspOptions = optionsall.lsp
-end
-
-require("lspconfig").util.default_config = vim.tbl_extend("force", require("lspconfig").util.default_config, {
-	-- Required by nvim-cmp
-	capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-
-	-- Init signature plugin on_attach
-	on_attach = function()
-		require("lsp_signature").on_attach({
-			bind = true,
-			handler_opts = {
-				border = "single",
+local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+require("lspconfig").lua_ls.setup({
+	settings = {
+		Lua = {
+			runtime = {
+				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+				version = "LuaJIT",
 			},
-		})
-	end,
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = { "vim" },
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			-- Do not send telemetry data containing a randomized but unique identifier
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+
+
 })
 
-for _, lsp in ipairs(lspOptions.servers) do
-	if type(lsp) == "table" and lsp.settings then
-		require("lspconfig")[lsp].setup({
-		  settings = lsp.settings
-		})
-	else
-		require("lspconfig")[lsp].setup({})
-	end
-end
+lspconfig.clangd.setup({})
+-- Set up lspconfig.
+require'lspconfig'.openscad_lsp.setup{}
 
-for _, sign in ipairs(lspOptions.signs) do
-	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-end
+require("lspconfig")["lua_ls"].setup({
+	capabilities = capabilities,
+})
+
+require'lspconfig'.arduino_language_server.setup{}
+
+
+require("lspconfig")["openscad_lsp"].setup({
+	capabilities = capabilities,
+})
+
+require("lspconfig")["arduino_language_server"].setup({
+	capabilities = capabilities,
+})
+
+
+require("lspconfig")["clangd"].setup({
+	capabilities = capabilities,
+})
